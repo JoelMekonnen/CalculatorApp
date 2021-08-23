@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  {% if request.user.is_authenticated %}
+      <form id="result-form">
+          {% csrf_token %}
+        {{form.as_p}}
+      </form>
+      <input type="submit" id="calculate" value="calculate">
+      <script>
+          document.getElementById("calculate").onclick = 
+             function(e) {            
+            e.preventDefault();
+            var exp = document.getElementById("id_expression");
+            var result = document.getElementById("id_result");
+            var val = eval(exp.value);
+            result.value = val;
+            var formData = {
+      expression: $("#id_expression").val(),
+      result: $("#id_result").val(),
+    };
+
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'save' %}",
+                data:formData,
+            })
+    }    
+    </script>
+    {% else %}
+    <h1>Please Signup or Login</h1>
+  {% endif %}
+{% endblock content %}

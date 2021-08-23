@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+ 
+    <table class="table">
+        <tr>
+            <th scope="col"> <h3>Expression</h3> </th>
+            <th scope="col"><h3>result</h3> </th>
+        </tr>
+        {% for results in result %}
+        <tr scope="row">
+            <td><h5></h5>{{results.expression}}</h5> </td>
+            <td> <h5>{{results.result}}</h5></td>
+        <tr>
+        
+        {% endfor %}
+    </table>
+{% endblock content%}

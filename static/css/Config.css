@@ -1,0 +1,19 @@
+body {
+    overflow-x:hidden;
+}
+#menuPlace li {
+    margin-top: 25px;
+    font-family: "Montserrat";
+    font-size: 15px;
+    color: black !important;
+    margin-left: 25px;
+}
+#menuPlace > li > a  {
+    color: black;
+    margin-right: 25px;
+    font-size: 16px;
+    font-weight: 700;
+}
+#menuPlace > li > a:hover {
+    color: #7300ff !important;
+}

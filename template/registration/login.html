@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row justify-content-center loginRow">
+    <div class="col-lg-4">
+            {% csrf_token %}
+            <div class = "card" style="border-style:none !important; box-shadow:none !important;padding:15%;"> 
+                <div class = "card-body">
+                   <h2 class = "h2 card-title" style = "font-family:'source sans pro' !important;color:black;">Login to Calculator</h2>
+                   <form method="POST">
+                      {% csrf_token %}
+                      {{form.as_p}}
+                      <div class="row">
+                        <button type="submit" class='btn btn-green'>Login</button>
+                        <a href="{% url 'register' %}" class='btn btn-blue'>Register</a>
+                    </div>
+                  </form>
+            </div>
+       </div>
+    </div>
+</div>
+{% endblock content %}
+    
+
+
